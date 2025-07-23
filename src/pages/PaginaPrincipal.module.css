@@ -1,0 +1,57 @@
+.main {
+  font-family: "Work Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20vh;
+  background: url("../assets/portada.webp") center / cover no-repeat;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.container-opciones {
+  border-radius: 10px;
+  padding: 30px;
+  background-color: #fefefd;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  box-shadow: 0 0 20px rgba(118, 111, 111, 0.667);
+  border: 3px solid #b692f8;
+}
+
+.logo {
+  margin-bottom: 20px;
+  width: min(60vw, 300px); /* ancho máximo 300px o 60% de la pantalla */
+  height: auto;
+  filter: drop-shadow(0 0 3px #0006);
+}
+
+.grupo-botones {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.boton {
+  color: #5a0087;
+  font-size: 1.3rem;
+  padding: 12px;
+  text-transform: capitalize;
+  border-radius: 10px;
+  border: 3px solid #b692f8;
+  background-color: #fefefd;
+  filter: drop-shadow(0 0 3px #0006);
+}
+
+.boton:focus {
+  box-shadow: 0 0 15px #b692f8;
+}
+
+.boton:hover {
+  background-color: #b692f8; /* color oscuro en hover */
+  border-color: #b692f8; /* color claro en borde hover */
+  color: #fefefd;
+}
