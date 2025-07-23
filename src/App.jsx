@@ -1,21 +1,10 @@
-import portada from "./assets/portada.png";
+import PaginaPrincipal from "./components/PaginaPrincipal";
 
 
 function App() {
   return (
     <>
-      <div
-      style={{
-        margin: 0,
-        backgroundImage: `url(${portada})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        width: '100vw',
-        height: '100vh'
-      }}
-      >
-      </div>
+      <PaginaPrincipal/>
     </>
   );
 }
