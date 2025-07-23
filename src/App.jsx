@@ -1,5 +1,4 @@
-import portada from "./assets/portada.webp";
-
+import PaginaPrincipal from "./pages/PaginaPrincipal";
 
 function App() {
   return (
