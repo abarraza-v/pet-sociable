@@ -1,4 +1,4 @@
-import portada from "./assets/portada.png";
+import portada from "./assets/portada.webp";
 
 
 function App() {
