@@ -1,6 +1,4 @@
-import FormularioMascotas from "../components/mascota/FormularioMascotas";
-
 export default function TestPage() {
   // Aquí reemplaza el h1 por el componente de pruebas.
-  return <FormularioMascotas />;
+  return <h2>Página de testing</h2>;
 }
