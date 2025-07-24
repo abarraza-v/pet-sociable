@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { crearMascota } from "../../api/mascotas";
+import { useNavigate } from "react-router-dom";
 
 const FormularioMascotas = () => {
   const [nombreMascota, setNombreMascota] = useState("");
@@ -8,6 +9,8 @@ const FormularioMascotas = () => {
   const [razaMascota, setRazaMascota] = useState("");
   const [edadMascota, setEdadMascota] = useState("");
   const [descripcionMascota, setDescripcionMascota] = useState("");
+
+  const navigate = useNavigate();
 
   const validarFormularioMascotas = () => {
     if (!nombreMascota.trim()) {
@@ -72,7 +75,23 @@ const FormularioMascotas = () => {
 
     try {
       await crearMascota(mascota);
-      limpiarFormulario();
+      const result = await Swal.fire({
+        title: "Mascota registrada",
+        text: "¿Deseas ir a la lista de mascotas?",
+        icon: "success",
+        showCancelButton: true,
+        confirmButtonText: "Ver lista",
+        cancelButtonText: "Continuar aquí",
+      });
+
+      if (result.isConfirmed) {
+        navigate("/mascotas", {
+          state: { mensaje: "Mascota registrada correctamente." },
+        });
+      } else {
+        limpiarFormulario();
+      };
+      
     } catch (error) {
       console.error("Error al crear la mascota:", error);
     }

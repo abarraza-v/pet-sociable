@@ -22,10 +22,6 @@ export const crearMascota = async (datos) => {
   try {
     const response = await api.post('/mascotas/', datos);
 
-    if (response.status === 201) {
-      Swal.fire('Éxito', 'Mascota registrada correctamente.', 'success');
-    }
-
     return response.data;
   } catch (error) {
     if (error.response?.status === 400) {
