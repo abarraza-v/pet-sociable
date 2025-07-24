@@ -25,6 +25,8 @@ const FormularioMascotas = () => {
       return false;
     }
 
+    const edad = parseInt(edadMascota, 10);
+    console.log("Edad parseada:", edad);
     if (edadMascota === "" || isNaN(edadMascota) || parseInt(edadMascota) < 0) {
       Swal.fire(
         "Error",
@@ -64,7 +66,7 @@ const FormularioMascotas = () => {
       nombre: nombreMascota,
       especie: especieMascota,
       raza: razaMascota,
-      edad: parseInt(edadMascota),
+      edad_aproximada: parseInt(edadMascota),
       descripcion: descripcionMascota,
     };
 
