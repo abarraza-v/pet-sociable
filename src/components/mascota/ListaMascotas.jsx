@@ -50,14 +50,16 @@ const ListaMascotas = () => {
       {loading ? (
         <p>Cargando...</p>
       ) : (
-        <div>
-          {mascotas.map((mascota) => (
-            <MascotaCard
-              key={mascota.id}
-              mascota={mascota}
-              eliminarYMostrar={eliminarYMostrar}
-            />
-          ))}
+        <div className="container">
+          <div className="row">
+            {mascotas.map((mascota) => (
+              <MascotaCard
+                key={mascota.id}
+                mascota={mascota}
+                eliminarYMostrar={eliminarYMostrar}
+              />
+            ))}
+          </div>
         </div>
       )}
     </div>
