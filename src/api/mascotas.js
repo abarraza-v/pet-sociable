@@ -58,3 +58,31 @@ export const eliminarMascota = async (id) => {
     return false;
   }
 };
+
+// Verifica si hay al menos una mascota registrada antes de crear una publicación
+export const verificarMascotasDisponibles = async () => {
+  try {
+    const response = await api.get('/mascotas/');
+    const mascotas = response.data;
+
+    if (!Array.isArray(mascotas) || mascotas.length === 0) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Sin mascotas registradas',
+        text: 'Debes registrar al menos una mascota antes de crear una publicación.',
+        confirmButtonText: 'Entendido'
+      });
+      return false;
+    }
+
+    return true;
+  } catch (error) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error al obtener mascotas',
+      text: 'No se pudo verificar la lista de mascotas. Intenta más tarde.'
+    });
+    console.error('Error al verificar mascotas:', error);
+    return false;
+  }
+};
