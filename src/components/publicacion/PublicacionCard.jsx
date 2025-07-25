@@ -1,5 +1,6 @@
 import clsx from "clsx";
-import estilos from "./PublicacionCard.module.css";
+import estilos from "./PublicacionCard.module.css"
+import ListaComentarios from "./ListaComentarios";
 
 const PublicacionCard = ({ publicacion }) => {
   const {
@@ -102,19 +103,8 @@ const PublicacionCard = ({ publicacion }) => {
       )}
       <div className="card-body">
         <h3 className="h5">Comentarios</h3>
-        {comentarios.length > 0 ? (
-          <ul>
-            {comentarios.map((comentario) => (
-              <li key={comentario.id}>
-                {comentario.texto} <br/>
-                <span style={{ fontSize: "smaller", color: "#4b4b4bff"}}>{new Date(fecha).toLocaleDateString() }</span>
-                </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No hay comentarios aún.</p>
-        )}
-
+        
+        <ListaComentarios comentarios={comentarios}/>
         <div className="input-group mt-2">
           <textarea
             className="form-control no-resize"
