@@ -47,33 +47,10 @@ const Header = () => {
                 Publicaciones
               </Link>
             </li>
-            <li className="nav-item dropdown">
-              <button
-                className={clsx(
-                  "nav-link",
-                  "dropdown-toggle",
-                  "btn",
-                estilos["border-oscuro"]
-                )}
-                id="dropdownEstados"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                type="button"
-              >
+            <li className={clsx("nav-item", estilos["border-oscuro"])}>
+              <Link className="nav-link" to="/mascotas/estados">
                 Gestión de Estados
-              </button>
-              <ul className="dropdown-menu" aria-labelledby="dropdownEstados">
-                <li>
-                  <Link className="dropdown-item" to="/estados/crear">
-                    Crear Estado
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/estados/listar">
-                    Listar Estados
-                  </Link>
-                </li>
-              </ul>
+              </Link>
             </li>
           </ul>
         </div>

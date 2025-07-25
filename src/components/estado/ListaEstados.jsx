@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getEstados, eliminarEstado } from "../../api/estados";
 import EstadoCard from "./EstadoCard";
+import { ClipLoader } from "react-spinners";
 
 const ListaEstados = () => {
   const [estados, setEstados] = useState([]);
@@ -46,10 +47,11 @@ const ListaEstados = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Lista Estados</h2>
+    <>
       {loading ? (
-        <p>Cargando...</p>
+        <div className="d-flex justify-content-center align-items-center">
+          <ClipLoader size={40} color={"#3b82f6"} />
+        </div>
       ) : (
         <div className="container">
           <div className="row">
@@ -63,7 +65,7 @@ const ListaEstados = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
