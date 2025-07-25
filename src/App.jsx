@@ -27,13 +27,7 @@ function App() {
           {/* Rutas anidadas de mascotas */}
           <Route path="/mascotas/crear" element={<RegistroMascotasPage />} />
           <Route path="/mascotas/listar" element={<ListaMascotasPage />} />
-          
-
-          {/* Rutas anidadas de estados */}
-          <Route path="/estados" element={<EstadosPage />}>
-            <Route path="listar" element={<ListaEstados />} />
-            <Route path="crear" element={<FormularioEstados />} />
-          </Route>
+          <Route path="/mascotas/estados" element={<EstadosPage />}/>
         </Route>
 
         {/* Rutas anidadas de publicaciones */}

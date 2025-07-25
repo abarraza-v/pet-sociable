@@ -55,30 +55,24 @@ const FormularioEstados = () => {
   };
 
   return (
-    <>
-      <div className="container mt-4">
-        <h2 className="mb-4">Registrar estado</h2>
-        <form onSubmit={manejarEnvio}>
-          <div className="mb-3">
-            <label htmlFor="nombreEstado" className="form-label">
-              Nombre:
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="nombreEstado"
-              name="nombreEstado"
-              value={nombreEstado}
-              onChange={(e) => setNombreEstado(e.target.value)}
-            />
-          </div>
-
-          <button type="submit" className="btn btn-primary">
-            Enviar
-          </button>
-        </form>
+    <form onSubmit={manejarEnvio}>
+      <div className="mb-3 d-flex flex-column gap-2">
+        <input
+          placeholder="Nombre del Estado"
+          type="text"
+          className="form-control"
+          id="nombreEstado"
+          name="nombreEstado"
+          value={nombreEstado}
+          onChange={(e) => setNombreEstado(e.target.value)}
+        />
+        <input
+          type="submit"
+          className="btn btn-primary"
+          value="Agregar Estado"
+        />
       </div>
-    </>
+    </form>
   );
 };
 
