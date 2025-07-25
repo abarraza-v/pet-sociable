@@ -1,12 +1,9 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { crearEstado } from "../../api/estados";
-import { useNavigate } from "react-router-dom";
 
 const FormularioEstados = () => {
   const [nombreEstado, setNombreEstado] = useState("");
-
-  const navigate = useNavigate();
 
   const validarFormularioEstados = () => {
     if (!nombreEstado.trim()) {
@@ -33,7 +30,7 @@ const FormularioEstados = () => {
 
     try {
       await crearEstado(estado);
-      Swal.fire('Éxito', 'Comentario publicado correctamente.', 'success');
+      Swal.fire('Éxito', 'Estado creado correctamente.', 'success');
       limpiarFormulario();
     } catch (error) {
       console.error("Error al crear el estado:", error);
