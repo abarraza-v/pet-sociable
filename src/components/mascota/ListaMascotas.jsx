@@ -20,7 +20,8 @@ const ListaMascotas = () => {
    * @returns {Promise<void>}
    */
   const eliminarYMostrar = async (id) => {
-    if (eliminarMascota(id)) {
+    const eliminado = await eliminarMascota(id);
+    if (eliminado) {
       cargandoMascotas();
     }
   };

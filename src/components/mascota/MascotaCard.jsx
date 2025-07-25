@@ -1,5 +1,5 @@
 const MascotaCard = ({ mascota, eliminarYMostrar }) => {
-  const { id, nombre, especie, raza, edad, descripcion } = mascota;
+  const { id, nombre, especie, raza, edad_aproximada, descripcion } = mascota;
 
   const handleClick = () => {
     eliminarYMostrar(id);
@@ -19,7 +19,7 @@ const MascotaCard = ({ mascota, eliminarYMostrar }) => {
           <p className="card-text">
             <strong>Especie:</strong> {especie} <br />
             <strong>Raza:</strong> {raza} <br />
-            <strong>Edad aprox.:</strong> {edad} <br />
+            <strong>Edad aprox.:</strong> {edad_aproximada} <br />
             <strong>Descripción:</strong> {descripcion}
           </p>
           <button onClick={handleClick} className="btn btn-danger">
