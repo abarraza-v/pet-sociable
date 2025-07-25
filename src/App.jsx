@@ -4,7 +4,7 @@ import PaginaPrincipal from "./pages/PaginaPrincipal";
 import TestPage from "./pages/TestPage"; // componente para probar
 
 import RegistroMascotasPage from "./pages/mascotas/RegistroMascotasPage";
-import ListaMascotas from "./components/mascota/ListaMascotas";
+import ListaMascotasPage from "./pages/mascotas/ListaMascotasPage";
 import FormularioMascotas from "./components/mascota/FormularioMascotas";
 
 import EstadosPage from "./pages/estados/EstadosPage";
@@ -25,10 +25,9 @@ function App() {
           <Route path="/test" element={<TestPage />} />
 
           {/* Rutas anidadas de mascotas */}
-          <Route path="/mascotas" element={<RegistroMascotasPage />}>
-            <Route path="listar" element={<ListaMascotas />} />
-            <Route path="crear" element={<FormularioMascotas />} />
-          </Route>
+          <Route path="/mascotas/crear" element={<RegistroMascotasPage />} />
+          <Route path="/mascotas/listar" element={<ListaMascotasPage />} />
+          
 
           {/* Rutas anidadas de estados */}
           <Route path="/estados" element={<EstadosPage />}>
