@@ -15,7 +15,7 @@ const PublicacionCard = ({ publicacion }) => {
   return (
     <div className={clsx("card", "mb-4", "p-4", estilos.card)}>
       <div className="card-body">
-        <h2 className="h3 fw-bold card-title">
+        <h2 className="h3 text-capitalize fw-bold card-title">
           {mascota?.nombre || "Sin nombre"}
         </h2>
         <h3 className="h5"><strong>{estado?.nombre || "Sin estado"}</strong> · Fecha Publicación {new Date(fecha).toLocaleDateString() }</h3>
