@@ -1,6 +1,24 @@
 .logo {
-  margin-bottom: 20px;
-  width: min(60vw, 300px); /* ancho máximo 300px o 60% de la pantalla */
-  height: auto;
-  filter: drop-shadow(0 0 3px #0006);
+  transition: transform 0.3s ease-in-out;
+  height: clamp(70px, 5vw, 64px);
+  width: auto; /* mantiene proporciones */
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.bg-clara {
+  background-color: #b692f8;
+}
+
+.border-oscuro {
+  transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 0 0 0 0px #7e36a5;
+  border-radius: 3px;
+}
+
+.border-oscuro:hover {
+  box-shadow: 0 0 0 3px #7e36a5;
+  transform: scale(1.05);
 }
