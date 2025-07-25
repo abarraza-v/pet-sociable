@@ -2,6 +2,8 @@
 Desarrollado por Alejandro Barraza y Angel Medina
 
 
+
+
 ## Descripción
 Pet Sociable es una aplicación web construida con React + Vite que permite gestionar información relacionada con mascotas, publicaciones de estado (como mascotas perdidas o en adopción), comentarios, y otros datos asociados.
 
@@ -18,6 +20,8 @@ Cada sección tiene su propio módulo y navegación dedicada. El formulario de p
 La aplicación fue desarrollada pensando en la usabilidad y claridad para cualquier usuario, incluso sin conocimientos técnicos.
 
 
+
+
 ## Indicaciones
 Una vez clonado el repositorio pet-sociable, ubicarse dentro del repositorio y ejecutar en la interfaz (git bash): npm install
 
@@ -28,6 +32,9 @@ npm install creará la carpeta node_modules que permitirá el correcto funcionam
 Ejecuta el comando npm run dev
 
 Ya estará listo y cargado para utilizarse en http://localhost:3000/
+
+
+
 
 
 
