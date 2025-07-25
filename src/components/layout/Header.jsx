@@ -5,14 +5,13 @@ import logo from "../../assets/petSociable.svg";
 
 const Header = () => {
   return (
-    <header>
+    <header className="sticky-top">
       <nav
         className={clsx(
           "navbar",
           "navbar-expand-lg",
           "navbar-light",
-          "p-4",
-          "sticky-top",
+          "px-5",
           "shadow",
           estilos["bg-clara"]
         )}
