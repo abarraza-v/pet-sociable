@@ -29,6 +29,12 @@ function App() {
           <Route path="listar" element={<ListaEstados />} />
           <Route path="crear" element={<FormularioEstados />} />
         </Route>
+
+        {/* Rutas anidadas de publicaciones */}
+        <Route path="/publicaciones" element={<PublicacionesPage />}>
+          <Route path="listar" element={<ListaPublicaciones />} />
+          <Route path="crear" element={<FormularioPublicaciones />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
