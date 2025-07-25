@@ -1,19 +1,10 @@
 import ListaPublicaciones from "../../components/publicacion/ListaPublicaciones";
 import BotonPublicar from "./BotonPublicar";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 
 export default function PublicacionesPage() {
-  const [publicaciones, setPublicaciones] = useState([]);
   const [nuevoDato, setNuevoDato] = useState(null);
 
-  const cargarPublicaciones = async () => {
-    const datos = await getPublicaciones();
-    setPublicaciones(datos);
-  };
-
-  useEffect(() => {
-    cargarPublicaciones();
-  }, [publicaciones]);
 
   return (
     <>
