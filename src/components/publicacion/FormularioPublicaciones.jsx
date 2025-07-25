@@ -117,6 +117,7 @@ const FormularioPublicaciones = ({ setNuevoDato }) => {
       Swal.fire("Éxito", "Publicación creada exitosamente.", "success");
       setNuevoDato(formData);
       limpiarFormulario();
+      
     } catch (error) {
       console.error("Error al crear publicación:", error);
       Swal.fire("Error", "No se pudo crear la publicación.", "error");
