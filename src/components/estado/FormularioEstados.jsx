@@ -33,22 +33,8 @@ const FormularioEstados = () => {
 
     try {
       await crearEstado(estado);
-      const result = await Swal.fire({
-        title: "Estado registrado",
-        text: "¿Deseas ir a la lista de estados?",
-        icon: "success",
-        showCancelButton: true,
-        confirmButtonText: "Ver lista",
-        cancelButtonText: "Continuar aquí",
-      });
-
-      if (result.isConfirmed) {
-        navigate("/estados/listar", {
-          state: { mensaje: "Estado registrado correctamente." },
-        });
-      } else {
-        limpiarFormulario();
-      }
+      Swal.fire('Éxito', 'Comentario publicado correctamente.', 'success');
+      limpiarFormulario();
     } catch (error) {
       console.error("Error al crear el estado:", error);
     }
