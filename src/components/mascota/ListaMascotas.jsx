@@ -47,9 +47,10 @@ const ListaMascotas = () => {
 
   return (
     <div>
-      <h2>Lista Mascotas</h2>
       {loading ? (
-        <p>Cargando...</p>
+        <div className="text-center">
+          <p className="fw-bold">Cargando...</p>
+        </div>
       ) : (
         <div className="container">
           <div className="row">
