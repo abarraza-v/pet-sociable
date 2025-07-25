@@ -1,0 +1,6 @@
+.logo {
+  margin-bottom: 20px;
+  width: min(60vw, 300px); /* ancho máximo 300px o 60% de la pantalla */
+  height: auto;
+  filter: drop-shadow(0 0 3px #0006);
+}
