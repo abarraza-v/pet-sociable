@@ -3,7 +3,7 @@ import { getPublicaciones } from "../../api/publicaciones";
 import PublicacionCard from "./PublicacionCard";
 import { ClipLoader } from "react-spinners";
 
-const ListaPublicaciones = () => {
+const ListaPublicaciones = ({ nuevoDato }) => {
   const [publicaciones, setPublicaciones] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -23,7 +23,7 @@ const ListaPublicaciones = () => {
 
   useEffect(() => {
     cargarPublicaciones();
-  }, []);
+  }, [nuevoDato]);
 
   return (
     <div>

@@ -4,7 +4,7 @@ import { getEstados, getEstadoPorId } from "../../api/estados";
 import { getMascotas, getMascotaPorId } from "../../api/mascotas";
 import { crearPublicacion } from "../../api/publicaciones";
 
-const FormularioPublicaciones = () => {
+const FormularioPublicaciones = ({ setNuevoDato }) => {
   const [idMascota, setIdMascota] = useState("");
   const [idEstado, setIdEstado] = useState("");
   const [descripcion, setDescripcion] = useState("");
@@ -115,7 +115,9 @@ const FormularioPublicaciones = () => {
     try {
       await crearPublicacion(formData);
       Swal.fire("Éxito", "Publicación creada exitosamente.", "success");
+      setNuevoDato(formData);
       limpiarFormulario();
+      
     } catch (error) {
       console.error("Error al crear publicación:", error);
       Swal.fire("Error", "No se pudo crear la publicación.", "error");

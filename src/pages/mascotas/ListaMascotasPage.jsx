@@ -1,8 +1,6 @@
-import clsx from "clsx";
 import ListaMascotas from "../../components/mascota/ListaMascotas";
-import estilos from "./RegistroMascotasPage.module.css";
 
-export default function RegistroMascotasPage() {
+export default function ListaMascotasPage() {
   return (
     <div>
       <h1 className="h2 text-center mb-4 fw-bold">Lista de Mascotas</h1>
