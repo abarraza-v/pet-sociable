@@ -1,8 +1,11 @@
+import clsx from "clsx";
+import estilos from "./PublicacionCard.module.css";
+
 const PublicacionCard = ({ publicacion }) => {
   const {
     descripcion,
     ubicacion,
-    fecha_publicacion,
+    fecha,
     imagen,
     mascota,
     estado,
@@ -10,50 +13,95 @@ const PublicacionCard = ({ publicacion }) => {
   } = publicacion;
 
   return (
-    <div className="card mb-4">
+    <div className={clsx("card", "mb-4", "p-4", estilos.card)}>
       <div className="card-body">
-        <h4 className="card-title">
-          {estado?.nombre || "Sin estado"} - {mascota?.nombre || "Sin nombre"}
-        </h4>
+        <h2 className="h3 fw-bold card-title">
+          {mascota?.nombre || "Sin nombre"}
+        </h2>
+        <h3 className="h5"><strong>{estado?.nombre || "Sin estado"}</strong> · Fecha Publicación {new Date(fecha).toLocaleDateString() }</h3>
+        
         <ul>
           <li>
-            <strong>Especie:</strong> {mascota?.especie || "N/A"}
+            <span className="fw-bold">Especie:</span>{" "}
+            {mascota?.especie || "N/A"}
           </li>
           <li>
-            <strong>Raza:</strong> {mascota?.raza || "N/A"}
+            <span className="fw-bold">Raza:</span> {mascota?.raza || "N/A"}
           </li>
           <li>
-            <strong>Edad aprox.:</strong> {mascota?.edad_aproximada || "N/A"}{" "}
-            años
+            <span className="fw-bold">Edad aprox.:</span>{" "}
+            {mascota?.edad_aproximada || "N/A"} años
           </li>
           <li>
-            <strong>Descripción de la mascota:</strong>{" "}
+            <span className="fw-bold">Descripción de la mascota:</span>{" "}
             {mascota?.descripcion || "N/A"}
           </li>
         </ul>
 
         <p>
-          <strong>Ubicación:</strong> {ubicacion || "No especificada"}
+          <span className="fw-bold">Ubicación:</span>{" "}
+          {ubicacion || "No especificada"}
         </p>
         <p>
-          <strong>Descripción de la publicación:</strong> {descripcion || "N/A"}
+          <span className="fw-bold">Descripción:</span>{" "}
+          {descripcion || "N/A"}
         </p>
-        <p>
-          <strong>Fecha de publicación:</strong>{" "}
-          {new Date(fecha_publicacion).toLocaleDateString()}
-        </p>
+      </div>
+      {imagen && (
+        <div
+          className="mb-3 text-center position-relative overflow-hidden"
+          style={{ height: "600px" }}
+        >
+          {/* Fondo desenfocado */}
+          <div
+            style={{
+              backgroundImage: `url(${imagen})`,
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              filter: "blur(10px)",
+              position: "absolute",
+              top: 0,
+              right: 0,
+              bottom: 0,
+              left: 0,
+              zIndex: 1,
+              transform: "scale(1.1)",
+            }}
+          />
 
-        {imagen && (
-          <div className="mb-3">
-            <img
-              src={imagen}
-              alt="Imagen de la publicación"
-              className="img-fluid"
-            />
-          </div>
-        )}
+          {/* Capa semi-transparente (opcional, por contraste) */}
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              right: 0,
+              bottom: 0,
+              left: 0,
+              backgroundColor: "rgba(255, 255, 255, 0.2)", // puedes ajustar o quitar
+              zIndex: 2,
+            }}
+          />
 
-        <h5>Comentarios</h5>
+          {/* Imagen principal centrada y contenida */}
+          <div
+            style={{
+              backgroundImage: `url(${imagen})`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              position: "absolute",
+              top: 0,
+              right: 0,
+              bottom: 0,
+              left: 0,
+              zIndex: 3,
+            }}
+          />
+        </div>
+      )}
+      <div className="card-body">
+        <h3 className="h5">Comentarios</h3>
         {comentarios.length > 0 ? (
           <ul>
             {comentarios.map((comentario) => (
@@ -64,12 +112,12 @@ const PublicacionCard = ({ publicacion }) => {
           <p>No hay comentarios aún.</p>
         )}
 
-        <div className="d-flex mt-2">
+        <div className="input-group mt-2">
           <textarea
-            className="form-control me-2"
+            className="form-control no-resize"
             placeholder="Escribe tu comentario..."
             rows={2}
-            disabled
+            disable
           ></textarea>
           <button className="btn btn-secondary" disabled>
             Comentar
