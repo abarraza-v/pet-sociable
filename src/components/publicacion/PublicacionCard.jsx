@@ -1,6 +1,8 @@
 import clsx from "clsx";
-import estilos from "./PublicacionCard.module.css"
+import estilos from "./PublicacionCard.module.css";
 import ListaComentarios from "./ListaComentarios";
+import { useState } from "react";
+import FormularioComentarios from "./FormularioComentarios";
 
 const PublicacionCard = ({ publicacion }) => {
   const {
@@ -10,8 +12,12 @@ const PublicacionCard = ({ publicacion }) => {
     imagen,
     mascota,
     estado,
-    comentarios = [],
+    comentarios: comentariosIniciales = [],
+    id,
   } = publicacion;
+
+  // Guardar comentarios en estado para que puedan actualizarse dinámicamente
+  const [comentarios, setComentarios] = useState(comentariosIniciales);
 
   return (
     <div className={clsx("card", "mb-4", "p-4", estilos.card)}>
@@ -19,8 +25,11 @@ const PublicacionCard = ({ publicacion }) => {
         <h2 className="h3 text-capitalize fw-bold card-title">
           {mascota?.nombre || "Sin nombre"}
         </h2>
-        <h3 className="h5"><strong>{estado?.nombre || "Sin estado"}</strong> · Fecha Publicación {new Date(fecha).toLocaleDateString() }</h3>
-        
+        <h3 className="h5">
+          <strong>{estado?.nombre || "Sin estado"}</strong> · Fecha Publicación{" "}
+          {new Date(fecha).toLocaleDateString()}
+        </h3>
+
         <ul>
           <li>
             <span className="fw-bold">Especie:</span>{" "}
@@ -44,8 +53,7 @@ const PublicacionCard = ({ publicacion }) => {
           {ubicacion || "No especificada"}
         </p>
         <p>
-          <span className="fw-bold">Descripción:</span>{" "}
-          {descripcion || "N/A"}
+          <span className="fw-bold">Descripción:</span> {descripcion || "N/A"}
         </p>
       </div>
       {imagen && (
@@ -103,19 +111,13 @@ const PublicacionCard = ({ publicacion }) => {
       )}
       <div className="card-body">
         <h3 className="h5">Comentarios</h3>
-        
-        <ListaComentarios comentarios={comentarios}/>
-        <div className="input-group mt-2">
-          <textarea
-            className="form-control no-resize"
-            placeholder="Escribe tu comentario..."
-            rows={2}
-            disable
-          ></textarea>
-          <button className="btn btn-secondary" disabled>
-            Comentar
-          </button>
-        </div>
+
+        <ListaComentarios comentarios={comentarios} />
+        <FormularioComentarios
+          comentarios={comentarios}
+          setComentarios={setComentarios}
+          publicacionId={id}
+        />
       </div>
     </div>
   );
