@@ -5,7 +5,6 @@ import { useState} from "react";
 export default function PublicacionesPage() {
   const [nuevoDato, setNuevoDato] = useState(null);
 
-
   return (
     <>
       <h1 className="h2 text-center fw-bold mb-5">Home</h1>
