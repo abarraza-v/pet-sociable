@@ -1,0 +1,13 @@
+.boton-fake {
+  height: "100px";
+  display: "flex";
+  align-items: "center";
+  cursor: "text";
+  padding-left: 20px;
+  transition: background-color 0.3s ease-in-out;
+  max-width: 700px;
+}
+
+.boton-fake:hover {
+    background-color: #dcdcdc;
+}
