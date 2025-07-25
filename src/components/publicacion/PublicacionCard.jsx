@@ -105,7 +105,10 @@ const PublicacionCard = ({ publicacion }) => {
         {comentarios.length > 0 ? (
           <ul>
             {comentarios.map((comentario) => (
-              <li key={comentario.id}>{comentario.texto}</li>
+              <li key={comentario.id}>
+                {comentario.texto} <br/>
+                <span style={{ fontSize: "smaller", color: "#4b4b4bff"}}>{new Date(fecha).toLocaleDateString() }</span>
+                </li>
             ))}
           </ul>
         ) : (
