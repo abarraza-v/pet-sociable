@@ -160,7 +160,7 @@ const FormularioMascotas = () => {
             Descripción:
           </label>
           <textarea
-            className="form-control"
+            className="form-control no-resize"
             id="descripcionMascota"
             name="descripcionMascota"
             rows="3"
