@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import PaginaPrincipal from "./pages/PaginaPrincipal";
-import TestPage from "./pages/TestPage"; // componente para probar
+//import TestPage from "./pages/TestPage"; // componente para probar
 
 import RegistroMascotasPage from "./pages/mascotas/RegistroMascotasPage";
 import ListaMascotasPage from "./pages/mascotas/ListaMascotasPage";
@@ -10,7 +10,7 @@ import FormularioMascotas from "./components/mascota/FormularioMascotas";
 import EstadosPage from "./pages/estados/EstadosPage";
 import ListaEstados from "./components/estado/ListaEstados";
 import FormularioEstados from "./components/estado/FormularioEstados";
-import PublicacionesPage from "./pages/publicaciones/PublicacionesPage"
+import PublicacionesPage from "./pages/publicaciones/PublicacionesPage";
 import MainLayout from "./components/layout/MainLayout";
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
 
         {/* Rutas con layout */}
         <Route element={<MainLayout />}>
-          <Route path="/test" element={<TestPage />} />
+          {/* <Route path="/test" element={<TestPage />} /> */}
 
           {/* Rutas anidadas de mascotas */}
           <Route path="/mascotas/crear" element={<RegistroMascotasPage />} />
