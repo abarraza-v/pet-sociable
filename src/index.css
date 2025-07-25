@@ -6,6 +6,8 @@ html {
 /* Hacer que todos los elementos hereden box-sizing */
 *, *::before, *::after {
   box-sizing: inherit;
+  font-family: "Work Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 :root {
