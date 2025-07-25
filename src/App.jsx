@@ -10,7 +10,7 @@ import FormularioMascotas from "./components/mascota/FormularioMascotas";
 import EstadosPage from "./pages/estados/EstadosPage";
 import ListaEstados from "./components/estado/ListaEstados";
 import FormularioEstados from "./components/estado/FormularioEstados";
-
+import PublicacionesPage from "./pages/publicaciones/PublicacionesPage"
 import MainLayout from "./components/layout/MainLayout";
 
 function App() {
@@ -27,14 +27,11 @@ function App() {
           {/* Rutas anidadas de mascotas */}
           <Route path="/mascotas/crear" element={<RegistroMascotasPage />} />
           <Route path="/mascotas/listar" element={<ListaMascotasPage />} />
-          <Route path="/mascotas/estados" element={<EstadosPage />}/>
+          <Route path="/mascotas/estados" element={<EstadosPage />} />
         </Route>
 
         {/* Rutas anidadas de publicaciones */}
-        {/* <Route path="/publicaciones" element={<PublicacionesPage />}>
-          <Route path="listar" element={<ListaPublicaciones />} />
-          <Route path="crear" element={<FormularioPublicaciones />} />
-        </Route> */}
+        <Route path="/publicaciones" element={<PublicacionesPage />} />
       </Routes>
     </BrowserRouter>
   );
