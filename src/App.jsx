@@ -28,10 +28,8 @@ function App() {
           <Route path="/mascotas/crear" element={<RegistroMascotasPage />} />
           <Route path="/mascotas/listar" element={<ListaMascotasPage />} />
           <Route path="/mascotas/estados" element={<EstadosPage />} />
+          <Route path="/publicaciones" element={<PublicacionesPage />} />
         </Route>
-
-        {/* Rutas anidadas de publicaciones */}
-        <Route path="/publicaciones" element={<PublicacionesPage />} />
       </Routes>
     </BrowserRouter>
   );
