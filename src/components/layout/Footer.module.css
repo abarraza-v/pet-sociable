@@ -1,0 +1,23 @@
+.texto-pequeño {
+    font-size: 0.6rem;
+}
+
+
+.footer {
+    padding: 25px 50px;
+}
+
+.logo {
+  transition: transform 0.3s ease-in-out;
+  height: clamp(40px, 4vw, 56px);
+  width: auto; /* mantiene proporciones */
+  margin-bottom: 6px;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.borde-gris-arriba {
+    border-top: 0.2px solid #495057;
+}
