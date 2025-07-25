@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PaginaPrincipal from "./pages/PaginaPrincipal";
 import TestPage from "./pages/TestPage"; // componente para probar
 
-import MascotasPage from "./pages/mascotas/MascotasPage";
+import RegistroMascotasPage from "./pages/mascotas/RegistroMascotasPage";
 import ListaMascotas from "./components/mascota/ListaMascotas";
 import FormularioMascotas from "./components/mascota/FormularioMascotas";
 
@@ -25,7 +25,7 @@ function App() {
           <Route path="/test" element={<TestPage />} />
 
           {/* Rutas anidadas de mascotas */}
-          <Route path="/mascotas" element={<MascotasPage />}>
+          <Route path="/mascotas" element={<RegistroMascotasPage />}>
             <Route path="listar" element={<ListaMascotas />} />
             <Route path="crear" element={<FormularioMascotas />} />
           </Route>
@@ -38,10 +38,10 @@ function App() {
         </Route>
 
         {/* Rutas anidadas de publicaciones */}
-        <Route path="/publicaciones" element={<PublicacionesPage />}>
+        {/* <Route path="/publicaciones" element={<PublicacionesPage />}>
           <Route path="listar" element={<ListaPublicaciones />} />
           <Route path="crear" element={<FormularioPublicaciones />} />
-        </Route>
+        </Route> */}
       </Routes>
     </BrowserRouter>
   );
