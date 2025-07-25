@@ -98,84 +98,83 @@ const FormularioMascotas = () => {
 
   return (
     <>
-      <div className="container mt-4">
-        <h2 className="mb-4">Registrar mascota</h2>
-        <form onSubmit={manejarEnvio}>
-          <div className="mb-3">
-            <label htmlFor="nombreMascota" className="form-label">
-              Nombre:
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="nombreMascota"
-              name="nombreMascota"
-              value={nombreMascota}
-              onChange={(e) => setNombreMascota(e.target.value)}
-            />
-          </div>
+      <form onSubmit={manejarEnvio}>
+        <div className="mb-3">
+          <label htmlFor="nombreMascota" className="form-label">
+            Nombre:
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="nombreMascota"
+            name="nombreMascota"
+            value={nombreMascota}
+            onChange={(e) => setNombreMascota(e.target.value)}
+          />
+        </div>
 
-          <div className="mb-3">
-            <label htmlFor="especieMascota" className="form-label">
-              Especie:
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="especieMascota"
-              name="especieMascota"
-              value={especieMascota}
-              onChange={(e) => setEspecieMascota(e.target.value)}
-            />
-          </div>
+        <div className="mb-3">
+          <label htmlFor="especieMascota" className="form-label">
+            Especie:
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="especieMascota"
+            name="especieMascota"
+            value={especieMascota}
+            onChange={(e) => setEspecieMascota(e.target.value)}
+          />
+        </div>
 
-          <div className="mb-3">
-            <label htmlFor="razaMascota" className="form-label">
-              Raza:
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="razaMascota"
-              name="razaMascota"
-              value={razaMascota}
-              onChange={(e) => setRazaMascota(e.target.value)}
-            />
-          </div>
+        <div className="mb-3">
+          <label htmlFor="razaMascota" className="form-label">
+            Raza:
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="razaMascota"
+            name="razaMascota"
+            value={razaMascota}
+            onChange={(e) => setRazaMascota(e.target.value)}
+          />
+        </div>
 
-          <div className="mb-3">
-            <label htmlFor="edadMascota" className="form-label">
-              Edad:
-            </label>
-            <input
-              type="number"
-              className="form-control"
-              id="edadMascota"
-              name="edadMascota"
-              value={edadMascota}
-              onChange={(e) => setEdadMascota(e.target.value)}
-            />
-          </div>
+        <div className="mb-3">
+          <label htmlFor="edadMascota" className="form-label">
+            Edad:
+          </label>
+          <input
+            type="number"
+            className="form-control"
+            id="edadMascota"
+            name="edadMascota"
+            value={edadMascota}
+            onChange={(e) => setEdadMascota(e.target.value)}
+          />
+        </div>
 
-          <div className="mb-3">
-            <label htmlFor="descripcionMascota" className="form-label">
-              Descripción:
-            </label>
-            <textarea
-              className="form-control"
-              id="descripcionMascota"
-              name="descripcionMascota"
-              rows="3"
-              value={descripcionMascota}
-              onChange={(e) => setDescripcionMascota(e.target.value)}
-            ></textarea>
-          </div>
-
-          <button type="submit" className="btn btn-primary">
-            Enviar
-          </button>
-        </form>
-      </div>
+        <div className="mb-5">
+          <label htmlFor="descripcionMascota" className="form-label">
+            Descripción:
+          </label>
+          <textarea
+            className="form-control"
+            id="descripcionMascota"
+            name="descripcionMascota"
+            rows="3"
+            value={descripcionMascota}
+            onChange={(e) => setDescripcionMascota(e.target.value)}
+          ></textarea>
+        </div>
+        <div className="d-flex justify-content-end">
+          <button type="submit" className="btn btn-primary w-100">
+          Enviar Datos
+        </button>
+        </div>
+        
+      </form>
     </>
   );
 };
