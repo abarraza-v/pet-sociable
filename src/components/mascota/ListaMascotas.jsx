@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getMascotas, eliminarMascota } from "../../api/mascotas";
 import MascotaCard from "./MascotaCard";
+import { ClipLoader } from "react-spinners";
 
 const ListaMascotas = () => {
   const [mascotas, setMascotas] = useState([]);
@@ -48,8 +49,8 @@ const ListaMascotas = () => {
   return (
     <div>
       {loading ? (
-        <div className="text-center">
-          <p className="fw-bold">Cargando...</p>
+        <div className="d-flex justify-content-center align-items-center">
+          <ClipLoader size={40} color={"#3b82f6"} />
         </div>
       ) : (
         <div className="container">
